@@ -6,7 +6,7 @@ st.title('BMI Calculator')
 
 #Display the image
 img = Image.open("C:/Users/Thuto/Desktop/Digital Regenesys Dashboard/Web Development AI/Code/bmi_image.png")
-st.image(img,caption="BMI image",use_container_width=True)
+st.image(img,caption="BMI image",use_column_width=True)
 
 #input fields
 name = st.text_input('Enter your name: ')
