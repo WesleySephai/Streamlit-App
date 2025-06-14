@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Welcome {{ current_user.username }}</h2>
+    <form method="POST">
+        <input type="text" name="category" placeholder="Category" required>
+        <input type="number" name="amount" step="0.01" placeholder="Amount" required>
+        <input type="date" name="date" required>
+        <button type="submit">Add Expense</button>
+    </form>
+    <h3>Total: R{{ total }}</h3>
+    <ul>
+        {% for expense in expenses %}
+            <li>{{ expense.date }} - {{ expense.category }} - R{{ expense.amount }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
